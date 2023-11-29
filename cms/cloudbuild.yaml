@@ -1,0 +1,42 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "build"
+      # Pass through environment variables that are needed for the build (most aren't)
+      - "--build-arg"
+      - "MUX_TOKEN_ID=${_MUX_TOKEN_ID}"
+      - "--build-arg"
+      - "MUX_TOKEN_SECRET=${_MUX_TOKEN_SECRET}"
+      - "-t"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/next-payload-starter/cms:$SHORT_SHA"
+      - "-f"
+      - "./cms/Dockerfile"
+      - "."
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "push"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/next-payload-starter/cms:$SHORT_SHA"
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: "gcloud"
+    args:
+      - "run"
+      - "deploy"
+      - "cms"
+      - "--region=${_REGION}"
+      - "--platform=managed"
+      - "--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/next-payload-starter/cms:$SHORT_SHA"
+    # I don't think any of these are necessary, we add them to runtime in Cloud Run
+    # env:
+    #   - "PAYLOAD_SECRET=${_PAYLOAD_SECRET}"
+    #   - "MONGODB_URI=${_MONGODB_URI}"
+    #   - "CLOUDFLARE_ACCESS_KEY_ID=${_CLOUDFLARE_ACCESS_KEY_ID}"
+    #   - "CLOUDFLARE_SECRET_ACCESS_KEY=${_CLOUDFLARE_SECRET_ACCESS_KEY}"
+    #   - "CLOUDFLARE_ENDPOINT=${_CLOUDFLARE_ENDPOINT}"
+    #   - "CLOUDFLARE_BUCKET=${_CLOUDFLARE_BUCKET}"
+    #   - "MUX_TOKEN_ID=${_MUX_TOKEN_ID}"
+    #   - "MUX_TOKEN_SECRET=${_MUX_TOKEN_SECRET}"
+    #   - "MUX_WEBHOOK_SIGNING_SECRET=${_MUX_WEBHOOK_SIGNING_SECRET}"
+timeout: 1800s
+# todo – try to avoid this option, the logging isn't as easy to read
+# options:
+#   logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,30 @@
+.cursor-provider {
+    cursor: none;
+}
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+.cursor__layout {
+    display: grid;
+    grid-template: auto auto / auto auto;
+}
+
+.cursor__media {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+}
+.cursor__media img {
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+.cursor__text {
+    grid-column: 2;
+    grid-row: 2;
+    position: relative;
+}

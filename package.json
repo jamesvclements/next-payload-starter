@@ -1,0 +1,25 @@
+{
+  "name": "next-payload",
+  "version": "0.0.1",
+  "description": "Opinionated starter kit for custom websites built on Next.js and Payload CMS",
+  "main": "index.js",
+  "author": "james@oldfriends.studio",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "cms",
+      "site",
+      "shared"
+    ]
+  },
+  "scripts": {
+    "cms": "yarn workspace cms run dev",
+    "site": "yarn workspace site run dev",
+    "dev": "npm-run-all --parallel cms site",
+    "types": "yarn workspace cms run types"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "packageManager": "yarn@3.6.4"
+}

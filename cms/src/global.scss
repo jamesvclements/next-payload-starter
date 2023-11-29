@@ -1,0 +1,17 @@
+/* Custom CSS for the admin panel */
+.field-type {
+  .rich-text__input {
+    min-height: unset;
+  }
+}
+
+/* Manually adjust order of side nav and dashboard */
+#nav-group-Pages {
+  order: -4;
+}
+#nav-group-Collections {
+  order: -3;
+}
+#nav-group-Components {
+  order: -2;
+}

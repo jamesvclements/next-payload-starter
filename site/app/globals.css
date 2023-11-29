@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply px-5 py-2.5 text-sm rounded-[4.375rem] cursor-pointer select-none mobileL:px-[0.9375rem] mobileL:py-2;
+  }
+}
+
+:root {
+  /* Color */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dark-grey: #d8d8da;
+  --color-light-grey: #f0f0f0;
+  --color-grey-text: #888888;
+  --color-blue: #bbdcef;
+  --color-pink: #f3adc7;
+  --color-gold: #e2b37c;
+  --color-green: #025649;
+  --color-slate: #09404b;
+  --color-crimson: #61162d;
+  --background-color: var(--color-black);
+  --text-color: var(--color-white);
+  --nav-height: 6rem;
+  --nav-text-color: var(--color-black);
+  --global-padding-x: 2.25rem;
+  --global-max-width: 2560px;
+  --block-padding-y: 3.125rem;
+  --theme-filter: 0;
+  --highlight-color: var(--color-ice);
+  --hero-padding-top: calc(var(--nav-height) + 3rem);
+  /* Typography */
+  /* Defined: 64px @ 1440px, 40px @ 393px */
+  /* Inferred: 89.67px @ 2560px, 38.33px @ 320px */
+  --heading-xl: clamp(38.33px, 30.99px + 2.29vw, 89.67px);
+  /* Defined: 1.09375 @ 1440px, 1.15 @ 393px */
+  /* Inferred: 1.03 @ 2560px, 1.15 @ 320px */
+  --heading-xl-leading: 1.09375;
+
+  /* Defined: 40px @ 1440px, 26px @ 393px */
+  /* Inferred: 54.98px @ 2560px, 25.02px @ 320px */
+  --heading-lg: clamp(25.02px, 20.74px + 1.34vw, 54.98px);
+  /* Defined: 1.15 @ 1440px, 1.15 @ 393px */
+  /* Inferred: 1.15 @ 2560px, 1.15 @ 320px */
+  --heading-lg-leading: 1.15;
+
+  /* Defined: 24px @ 1440px, 20px @ 393px */
+  /* Inferred: 28.28px @ 2560px, 19.72px @ 320px */
+  --heading-md: clamp(19.72px, 18.5px + 0.38vw, 28.28px);
+  /* Defined: 1.33 @ 1440px, 1.3 @ 393px */
+  /* Inferred: 1.36 @ 2560px, 1.30 @ 320px */
+  --heading-md-leading: clamp(1.3, 1.29 + 0.0029vw, 1.36);
+
+  /* Arbitary between heading-md and heading-sm */
+  --heading-base: calc((var(--heading-md) + var(--heading-sm)) / 2);
+  --heading-base-leading: calc(
+    (var(--heading-md-leading) + var(--heading-sm-leading)) / 2
+  );
+
+  /* Defined: 16px @ 1440px, 15px @ 393px */
+  /* Inferred: 17.07px @ 2560px, 14.93px @ 320px */
+  --heading-sm: clamp(14.93px, 14.62px + 0.1vw, 17.07px);
+  /* Defined: 1.375 @ 1440px, 1.33 @ 393px */
+  /* Inferred: 1.42 @ 2560px, 1.33 @ 320px */
+  --heading-sm-leading: clamp(1.33, 1.31 + 0.0043vw, 1.42);
+
+  --text-base: 1rem;
+  --text-base-leading: 1.375;
+
+  --text-sm: 0.8125rem;
+  --text-sm-leading: 1.38;
+
+  --text-xs: 0.75rem;
+  --text-xs-leading: 1.5;
+
+  @media screen(tablet) {
+    --global-padding-x: 0.9375rem;
+    --hero-padding-top: calc(var(--nav-height) + 3.90625rem);
+  }
+  @media screen(mobileL) {
+    --nav-height: 4.375rem;
+  }
+}
+
+::selection {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+html[data-theme="dark"] {
+  /* --nav-text-color: var(--color-white); */
+}
+
+html {
+  text-rendering: geometricPrecision;
+}
+body {
+  font-family: var(--font-oracle);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.1s ease-out;
+}
+
+nav {
+  color: var(--nav-text-color);
+}
+
+/* globals */
+.container {
+  width: 100%;
+  max-width: var(--global-max-width);
+  margin: 0 auto;
+  padding: 0 var(--global-padding-x);
+}
+/* Utilities */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
