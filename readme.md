@@ -1,10 +1,13 @@
 # next-payload-starter
 
-This is an opinionated starter repository for building marketing sites on Next.js and Payload CMS. This is the same stack I use for client sites at [Old Friends](https://oldfriends.studio) when Webflow or Framer won't do the trick. While the setup is based on my own dev preferences, it's hopefully useful for anyone looking to build highly-custom sites that clients can update themselves.
+This is an opinionated starter repository for building marketing sites on Next.js and Payload CMS. This is the same stack I use for client sites at [Old Friends](https://oldfriends.studio) when Webflow or Framer won't do the trick. While the setup is based on my own dev preferences, I'm hopeful this is useful for anyone looking to build highly-custom sites that clients can update themselves.
+
+![preview](https://github.com/jamesvclements/next-payload-starter/assets/20052710/c1e8aa7f-1ae2-46ea-8b68-d240c8607bfc)
+
 
 ## WIP Disclaimer
 
-Please note I can't guarantee the correctness of anything in this repo. I try to revisit it with each client project and add improvements, but it's difficult to always keep it in sync with the latest features coming out of each package and my own learnings. My rule of thumb is that if 80% of my projects will use a feature or component, it belongs in the starter.
+Please note this is still in early stages. I can't guarantee the correctness of anything in this repo. I try to revisit it with each client project and add improvements, but it's difficult to always keep it in sync with the latest features coming out of each package and my own learnings. My rule of thumb is that if 80% of my projects will use a feature or component, it belongs in the starter.
 
 ## Structure and Opinions
 
@@ -56,8 +59,10 @@ Mux is a fantastic platform for hosting and streaming video. This plugin customi
        collection: 'videos',
      }),
    ```
-
 6. That's it! You should now be able to upload videos to Mux directly through Payload 🍿
+
+### Demo
+https://github.com/jamesvclements/next-payload-starter/assets/20052710/5c9a6cde-fea1-4e33-b88a-84009b12120b
 
 ## payload-vercel
 
