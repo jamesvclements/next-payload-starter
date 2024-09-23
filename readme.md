@@ -1,5 +1,5 @@
 # next-payload-starter
-*Edit 6/5/24 — Payload 3.0 is almost out of beta and will be a huge improvement over the "deploying" part of this repo, as it all works inside the Next.js app deployed on Vercel. Will try to update this when I can, in the meantime check out Payload 3.0.*
+*Edit 6/5/24 — Payload 3.0 is almost out of beta and will be a huge improvement over the "deploying" part of this repo, as it all works inside the Next.js app deployed on Vercel. I will try to update this when I can, in the meantime check out Payload 3.0. However the `payload-mux` and payload-vercel` plugins in the CMS directory of this repo are relevant for either version of Payload.*
 
 This is an opinionated starter repository for building marketing sites on Next.js and Payload CMS. This is the same stack I use for client sites at [Old Friends](https://oldfriends.studio) when Webflow or Framer won't do the trick. While the setup is based on my own dev preferences, I'm hopeful this is useful for anyone looking to build highly-custom sites that clients can update themselves.
 
